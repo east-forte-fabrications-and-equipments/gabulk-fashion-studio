@@ -1,17 +1,15 @@
 # GABULK FASHION STUDIO
 
-Premium bespoke fashion studio based in Awoyaya, Lagos, Nigeria.
+Premium African Fashion, Tailored for You
 
-## About
+Powered by [Fashion Stitches Africa](https://fs-africa.org.ng)
 
-GABULK FASHION STUDIO specializes in custom-made clothing, traditional wear, and modern fashion design. Our expert tailors create stunning outfits for every occasion.
+## Features
+- Customizable hero section
+- Product catalogue with cart
+- Auto-submit orders to FSA dashboard
+- Social media integration
+- Mobile responsive
 
-## Contact
-
-- **Address**: 1, Owodunni Close, Jamiu Street, Awoyaya, Lagos State, Nigeria
-- **Phone**: +234 812 928 6822
-- **Email**: Bukolaowodunni72@gmail.com
-
-## Powered By
-
-[Fashion Stitches Africa](https://fashionstitchesafrica.lovable.app)
+## App Sync
+This website automatically syncs with all associated FSA apps via the service worker.

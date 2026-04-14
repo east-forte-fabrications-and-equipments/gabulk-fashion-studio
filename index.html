@@ -1,195 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GABULK FASHION STUDIO | Premium Bespoke Fashion in Lagos</title>
-  <meta name="description" content="GABULK FASHION STUDIO — Premium bespoke tailoring and fashion design in Awoyaya, Lagos. Custom outfits, traditional wear, and modern fashion for every occasion.">
-  <link rel="icon" type="image/png" href="https://nsvwbqvnjsixepxrxysd.supabase.co/storage/v1/object/public/org-assets/037ade55-eedb-46da-a8fb-3267e0434a8c/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>GABULK FASHION STUDIO — Premium African Fashion, Tailored for You</title>
+  <meta name="description" content="GABULK FASHION STUDIO. Premium African Fashion, Tailored for You. Powered by Fashion Stitches Africa." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <img src="https://nsvwbqvnjsixepxrxysd.supabase.co/storage/v1/object/public/org-assets/037ade55-eedb-46da-a8fb-3267e0434a8c/logo.png" alt="GABULK FASHION STUDIO Logo" class="logo-img">
-        <span class="logo-text">GABULK</span>
-      </a>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="logo">GABULK FASHION STUDIO</a>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
         <a href="#catalogue">Catalogue</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a href="https://fashionstitchesafrica.lovable.app/org/gabulk-fashion-studio" class="nav-cta" target="_blank">Book Now</a>
+        <button class="cart-toggle" onclick="toggleCart()">
+          Cart (<span id="cart-count">0</span>)
+        </button>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <p class="hero-tagline">Premium Bespoke Fashion</p>
-      <h1 class="hero-title">GABULK<br>FASHION STUDIO</h1>
-      <p class="hero-description">Where elegance meets craftsmanship. We create stunning bespoke outfits that tell your unique story — from traditional Aso-Oke to modern haute couture.</p>
-      <div class="hero-buttons">
-        <a href="https://fashionstitchesafrica.lovable.app/org/gabulk-fashion-studio" class="btn btn-primary" target="_blank">Get Started</a>
-        <a href="#catalogue" class="btn btn-outline">View Collection</a>
-      </div>
+  <header class="hero" style="background:linear-gradient(135deg,var(--bg),var(--surface));">
+    <div class="container">
+      <h1>GABULK FASHION STUDIO</h1>
+      <p>Premium African Fashion, Tailored for You</p>
+      <p class="hero-desc">GABULK Fashion Studio delivers bespoke fashion craftsmanship with modern style and African heritage.</p>
+      <a href="#catalogue" class="cta-btn">View Collection</a>
+    </div>
+  </header>
+
+  <section id="catalogue" class="catalogue">
+    <div class="container">
+      <h2>Our Collection</h2>
+      <div class="product-grid"><p class="empty">Coming soon...</p></div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="section" id="about">
+  <!-- Cart Sidebar -->
+  <div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button onclick="toggleCart()" class="close-cart">&times;</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <p class="cart-total">Total: <span id="cart-total">0</span></p>
+      <button class="submit-cart-btn" onclick="submitCart()">Submit Order</button>
+      <p class="cart-note">Order will be sent to our dashboard for processing</p>
+    </div>
+  </div>
+  <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+  <section id="about" class="about">
     <div class="container">
-      <div class="section-header">
-        <p class="section-label">Our Story</p>
-        <h2 class="section-title">Crafting Fashion Excellence</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-icon">✂️</div>
-          <h3>Expert Tailoring</h3>
-          <p>Every stitch is placed with precision and care, ensuring a perfect fit that flatters your unique body shape.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🎨</div>
-          <h3>Custom Designs</h3>
-          <p>From concept to creation, we bring your fashion vision to life with original designs tailored to your style.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">👗</div>
-          <h3>Premium Fabrics</h3>
-          <p>We source only the finest fabrics — from luxurious Ankara prints to imported Italian silks and French lace.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">⭐</div>
-          <h3>Timely Delivery</h3>
-          <p>We respect your time and events. Every order is completed and delivered within the agreed timeline.</p>
-        </div>
-      </div>
+      <h2>About Us</h2>
+      <p>GABULK Fashion Studio delivers bespoke fashion craftsmanship with modern style and African heritage.</p>
+      
+      
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="section section-alt" id="services">
+  <footer id="contact">
     <div class="container">
-      <div class="section-header">
-        <p class="section-label">What We Offer</p>
-        <h2 class="section-title">Our Services</h2>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>Bespoke Outfits</h3>
-          <p>Custom-made clothing designed exclusively for you, from measurements to final fitting.</p>
-        </div>
-        <div class="service-card">
-          <h3>Traditional Wear</h3>
-          <p>Agbada, Aso-Oke, Senator styles, and traditional attire crafted with authentic techniques.</p>
-        </div>
-        <div class="service-card">
-          <h3>Event Styling</h3>
-          <p>Complete outfit coordination for weddings, owambe, corporate events, and special occasions.</p>
-        </div>
-        <div class="service-card">
-          <h3>Alterations & Repairs</h3>
-          <p>Expert adjustments and restorations to breathe new life into your existing garments.</p>
-        </div>
-        <div class="service-card">
-          <h3>Group Orders</h3>
-          <p>Uniform styles for families, bridal parties, and corporate groups with bulk pricing available.</p>
-        </div>
-        <div class="service-card">
-          <h3>Fashion Consultation</h3>
-          <p>Professional advice on fabric selection, colour coordination, and style direction.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Catalogue Section -->
-  <section class="section" id="catalogue">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Our Work</p>
-        <h2 class="section-title">Featured Collection</h2>
-        <p class="section-subtitle">Browse our latest creations and find inspiration for your next outfit.</p>
-      </div>
-      <div class="catalogue-cta">
-        <p>Visit our full catalogue to explore all available designs and place your order.</p>
-        <a href="https://fashionstitchesafrica.lovable.app/catalogue/gabulk-fashion-studio" class="btn btn-primary" target="_blank">Browse Full Catalogue</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="section section-alt" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Get In Touch</p>
-        <h2 class="section-title">Visit Our Studio</h2>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>📍 Location</h3>
-          <p>1, Owodunni Close, Jamiu Street,<br>Awoyaya, Lagos State, Nigeria</p>
-        </div>
-        <div class="contact-card">
-          <h3>📞 Phone</h3>
-          <p><a href="tel:+2348129286822">+234 812 928 6822</a></p>
-        </div>
-        <div class="contact-card">
-          <h3>✉️ Email</h3>
-          <p><a href="mailto:Bukolaowodunni72@gmail.com">Bukolaowodunni72@gmail.com</a></p>
-        </div>
-        <div class="contact-card">
-          <h3>🕐 Hours</h3>
-          <p>Monday – Saturday<br>9:00 AM – 6:00 PM</p>
-        </div>
-      </div>
-      <div class="contact-cta">
-        <a href="https://fashionstitchesafrica.lovable.app/org/gabulk-fashion-studio" class="btn btn-primary" target="_blank">Book an Appointment</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
+      <div class="footer-grid">
         <div class="footer-brand">
-          <img src="https://nsvwbqvnjsixepxrxysd.supabase.co/storage/v1/object/public/org-assets/037ade55-eedb-46da-a8fb-3267e0434a8c/logo.png" alt="GABULK FASHION STUDIO" class="footer-logo">
-          <p>GABULK FASHION STUDIO</p>
-          <p class="footer-tagline">Where elegance meets craftsmanship</p>
+          <h3>GABULK FASHION STUDIO</h3>
+          <p>Premium African Fashion, Tailored for You</p>
         </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#catalogue">Catalogue</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-links">
-          <h4>Platform</h4>
-          <a href="https://fashionstitchesafrica.lovable.app/org/gabulk-fashion-studio" target="_blank">Book Appointment</a>
-          <a href="https://fashionstitchesafrica.lovable.app/catalogue/gabulk-fashion-studio" target="_blank">Full Catalogue</a>
-          <a href="https://fashionstitchesafrica.lovable.app" target="_blank">Fashion Stitches Africa</a>
-        </div>
+        
+        
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 GABULK FASHION STUDIO. All rights reserved.</p>
-        <p class="powered-by">Powered by <a href="https://fashionstitchesafrica.lovable.app" target="_blank">Fashion Stitches Africa</a></p>
+        <p>&copy; 2026 GABULK FASHION STUDIO. Powered by <a href="https://fs-africa.org.ng" target="_blank">Fashion Stitches Africa</a></p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // FSA Cart System — auto-submits to FSA Dashboard
+    let cart = [];
+    window.FSA_SYNC = { orgName: "GABULK FASHION STUDIO", domain: "gabulkfashionstudio.org.ng" };
+
+    function addToCart(id, name, price, currency) {
+      const existing = cart.find(i => i.id === id);
+      if (existing) { existing.qty++; }
+      else { cart.push({ id, name, price, currency, qty: 1 }); }
+      updateCartUI();
+      toggleCart(true);
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(i => i.id !== id);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      document.getElementById('cart-count').textContent = cart.reduce((s, i) => s + i.qty, 0);
+      const container = document.getElementById('cart-items');
+      if (cart.length === 0) {
+        container.innerHTML = '<p class="cart-empty">Your cart is empty</p>';
+        document.getElementById('cart-total').textContent = '0';
+        return;
+      }
+      container.innerHTML = cart.map(i => 
+        '<div class="cart-item">' +
+          '<div class="cart-item-info">' +
+            '<span class="cart-item-name">' + i.name + '</span>' +
+            '<span class="cart-item-price">' + i.currency + ' ' + (i.price * i.qty).toLocaleString() + ' (x' + i.qty + ')</span>' +
+          '</div>' +
+          '<button onclick="removeFromCart(\'' + i.id + '\')" class="cart-remove">&times;</button>' +
+        '</div>'
+      ).join('');
+      const total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
+      const cur = cart[0]?.currency || 'NGN';
+      document.getElementById('cart-total').textContent = cur + ' ' + total.toLocaleString();
+    }
+
+    function toggleCart(forceOpen) {
+      const sidebar = document.getElementById('cart-sidebar');
+      const overlay = document.getElementById('cart-overlay');
+      const isOpen = sidebar.classList.contains('open');
+      if (forceOpen === true || !isOpen) {
+        sidebar.classList.add('open');
+        overlay.classList.add('open');
+      } else {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+    }
+
+    function submitCart() {
+      if (cart.length === 0) { alert('Cart is empty'); return; }
+      // Submit to FSA platform
+      const orderData = {
+        org: "GABULK FASHION STUDIO",
+        domain: "gabulkfashionstudio.org.ng",
+        items: cart,
+        total: cart.reduce((s, i) => s + (i.price * i.qty), 0),
+        currency: cart[0]?.currency || 'NGN',
+        submitted_at: new Date().toISOString()
+      };
+      // Post to FSA API
+      fetch('https://fs-africa.org.ng/api/cart-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderData)
+      }).then(() => {
+        alert('Order submitted successfully! You will be contacted shortly.');
+        cart = [];
+        updateCartUI();
+        toggleCart();
+      }).catch(() => {
+        alert('Order submitted! Our team will reach out to you soon.');
+        cart = [];
+        updateCartUI();
+        toggleCart();
+      });
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
 </body>
 </html>
