@@ -2,7 +2,7 @@
 
 Premium African Fashion, Tailored for You
 
-Powered by [Fashion Stitches Africa](https://fs-africa.org.ng)
+Powered by [FYSORA FASHN (Fashion Stitches Africa)](https://fs-africa.org.ng)
 
 ## Features
 - Customizable hero section
