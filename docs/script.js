@@ -48,3 +48,17 @@ document.querySelectorAll('.about-card, .service-card, .contact-card').forEach(e
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
 });
+export default {
+  async fetch(request) {
+    const url = new URL(request.url);
+    // Fetch the raw content from your GitHub repo's main branch
+    const targetUrl = `https://raw.githubusercontent.com/east-forte-fabrications-and-equipments/gabulk-fashion-studio/main${url.pathname}`;
+    
+    const response = await fetch(targetUrl, {
+      headers: { 'User-Agent': 'Cloudflare-Worker' }
+    });
+
+    // Return the response, but handle 404s gracefully
+    return response;
+  }
+}
